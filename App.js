@@ -49,7 +49,7 @@ export default class QcFloatingButton extends React.Component {
                     onPress={() => {
                       this.toggleMyToolTip();
                     }}>
-                    <Text>{'this.locals.wo_btn_txt'}</Text>
+                    <Text>Sub-Button-04</Text>
                   </TouchableOpacity>
                   <TouchableOpacity
                     style={{marginTop: 12}}
@@ -72,7 +72,7 @@ export default class QcFloatingButton extends React.Component {
                     onPress={() => {
                       this.toggleMyToolTip();
                     }}>
-                    <Text>{'this.locals.qc_btn_txt'}</Text>
+                    <Text>Sub-Button-03</Text>
                   </TouchableOpacity>
                   <TouchableOpacity
                     style={{marginTop: 12}}
@@ -95,7 +95,7 @@ export default class QcFloatingButton extends React.Component {
                     onPress={() => {
                       this.toggleMyToolTip();
                     }}>
-                    <Text>{'this.locals.qc_btn_txt'}</Text>
+                    <Text>Sub-Button-02</Text>
                   </TouchableOpacity>
                   <TouchableOpacity
                     style={{marginTop: 12}}
@@ -118,7 +118,7 @@ export default class QcFloatingButton extends React.Component {
                     onPress={() => {
                       this.toggleMyToolTip();
                     }}>
-                    <Text>{'this.locals.qc_btn_txt'}</Text>
+                    <Text>Sub-Button-01</Text>
                   </TouchableOpacity>
                   <TouchableOpacity
                     style={{marginTop: 12}}
