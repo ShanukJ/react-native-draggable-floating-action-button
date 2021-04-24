@@ -1,0 +1,6 @@
+module Pods_DraggableFloatingActionButton {
+  umbrella header "Pods-DraggableFloatingActionButton-umbrella.h"
+
+  export *
+  module * { export * }
+}
