@@ -1,112 +1,202 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
-import type {Node} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import Draggable from 'react-native-draggable';
+import Tooltip from 'rn-tooltip';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+export default class QcFloatingButton extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      floaterHeight: 130,
+      draggable: false,
+    };
+    this.toolTipRef = React.createRef();
+  }
 
-const Section = ({children, title}): Node => {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-};
+  toggleMyToolTip() {
+    if (this.toolTipRef && this.toolTipRef.current) {
+      this.toolTipRef.current.toggleTooltip();
+    }
+  }
 
-const App: () => Node = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-};
+  render() {
+    return (
+      <Draggable
+        x={300}
+        y={500}
+        renderColor="transparent"
+        hideShadow={true}
+        disabled={this.state.draggable}>
+        <Tooltip
+          ref={this.toolTipRef}
+          height={250}
+          width={250}
+          containerStyle={{backgroundColor: 'transparent'}}
+          pointerColor={'transparent'}
+          overlayColor={'#98989880'}
+          onOpen={() => {
+            this.setState({draggable: true});
+          }}
+          onClose={() => {
+            this.setState({draggable: false});
+          }}
+          popover={
+            <View style={styles.topView}>
+              <View style={{flexDirection: 'row'}}>
+                <View style={styles.mainView}>
+                  <TouchableOpacity
+                    style={styles.touchableStyle}
+                    onPress={() => {
+                      this.toggleMyToolTip();
+                    }}>
+                    <Text>{'this.locals.wo_btn_txt'}</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    style={{marginTop: 12}}
+                    onPress={() => {
+                      this.toggleMyToolTip();
+                    }}>
+                    <Image
+                      source={{
+                        uri: 'https://reactnative.dev/img/tiny_logo.png',
+                      }}
+                      style={styles.actionButtonIcon}
+                    />
+                  </TouchableOpacity>
+                </View>
+              </View>
+              <View style={{flexDirection: 'row'}}>
+                <View style={styles.mainView}>
+                  <TouchableOpacity
+                    style={styles.touchableStyle}
+                    onPress={() => {
+                      this.toggleMyToolTip();
+                    }}>
+                    <Text>{'this.locals.qc_btn_txt'}</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    style={{marginTop: 12}}
+                    onPress={() => {
+                      this.toggleMyToolTip();
+                    }}>
+                    <Image
+                      source={{
+                        uri: 'https://reactnative.dev/img/tiny_logo.png',
+                      }}
+                      style={styles.actionButtonIcon}
+                    />
+                  </TouchableOpacity>
+                </View>
+              </View>
+              <View style={{flexDirection: 'row'}}>
+                <View style={styles.mainView}>
+                  <TouchableOpacity
+                    style={styles.touchableStyle}
+                    onPress={() => {
+                      this.toggleMyToolTip();
+                    }}>
+                    <Text>{'this.locals.qc_btn_txt'}</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    style={{marginTop: 12}}
+                    onPress={() => {
+                      this.toggleMyToolTip();
+                    }}>
+                    <Image
+                      source={{
+                        uri: 'https://reactnative.dev/img/tiny_logo.png',
+                      }}
+                      style={styles.actionButtonIcon}
+                    />
+                  </TouchableOpacity>
+                </View>
+              </View>
+              <View style={{flexDirection: 'row'}}>
+                <View style={styles.mainView}>
+                  <TouchableOpacity
+                    style={styles.touchableStyle}
+                    onPress={() => {
+                      this.toggleMyToolTip();
+                    }}>
+                    <Text>{'this.locals.qc_btn_txt'}</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    style={{marginTop: 12}}
+                    onPress={() => {
+                      this.toggleMyToolTip();
+                    }}>
+                    <Image
+                      source={{
+                        uri: 'https://reactnative.dev/img/tiny_logo.png',
+                      }}
+                      style={styles.actionButtonIcon}
+                    />
+                  </TouchableOpacity>
+                </View>
+              </View>
+            </View>
+          }>
+          <Image
+            source={{
+              uri:
+                'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAYAAAA6oTAqAAAAEXRFWHRTb2Z0d2FyZQBwbmdjcnVzaEB1SfMAAABQSURBVGje7dSxCQBACARB+2/ab8BEeQNhFi6WSYzYLYudDQYGBgYGBgYGBgYGBgYGBgZmcvDqYGBgmhivGQYGBgYGBgYGBgYGBgYGBgbmQw+P/eMrC5UTVAAAAABJRU5ErkJggg==',
+            }}
+            style={styles.mainActionButtonIcon}
+          />
+        </Tooltip>
+      </Draggable>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+  actionButtonIcon: {
+    height: 46,
+    width: 46,
+    justifyContent: 'flex-start',
+    alignItems: 'center',
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
+  touchableStyle: {
+    marginTop: 12,
+    height: 41,
+    width: 190,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 8,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 9,
   },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
+  mainActionButtonIcon: {
+    height: 56,
+    width: 56,
   },
-  highlight: {
-    fontWeight: '700',
+  topView: {width: 250},
+  mainView: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    flex: 1,
+  },
+  textContainerStyle: {
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    height: 41,
+    marginTop: -11,
+    minWidth: 189,
+    borderRadius: 8,
+  },
+  textStyle: {
+    fontSize: 14,
+    lineHeight: 16,
+    color: 'rgba(74,74,74,1)',
+    textAlignVertical: 'center',
+    justifyContent: 'center',
   },
 });
 
-export default App;
+const mapStateToProps = state => {
+  const WOM = state.wom;
+  const language = state.lang.current_lang;
+  const dtv_qc = state.dtvQc;
+  return {WOM, language, dtv_qc};
+};

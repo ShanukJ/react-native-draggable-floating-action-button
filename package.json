@@ -13,6 +13,7 @@
     "react": "17.0.1",
     "react-native": "0.64.0",
     "react-native-draggable": "^3.3.0",
+    "react-native-vector-icons": "^8.1.0",
     "rn-tooltip": "^3.0.1"
   },
   "devDependencies": {

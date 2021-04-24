@@ -6,7 +6,7 @@
   </a>
 </p>
 
-> React native draggable floating action button for android and ios
+> React Native draggable floating action button for android and ios
 
 ## Install
 
