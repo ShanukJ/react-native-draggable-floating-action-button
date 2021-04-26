@@ -8,6 +8,8 @@
 
 > React Native draggable floating action button for android and ios
 
+<img alt="License: MIT" src="./Images/Screen Recording 2021-04-26 at 23.50.29.gif" height="400"/>
+
 ## Install
 
 ```sh

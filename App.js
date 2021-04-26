@@ -4,7 +4,7 @@ import Draggable from "react-native-draggable";
 import Tooltip from "rn-tooltip";
 import Icon from "react-native-vector-icons/Ionicons";
 
-export default class QcFloatingButton extends React.Component {
+export default class FloatingButton extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
